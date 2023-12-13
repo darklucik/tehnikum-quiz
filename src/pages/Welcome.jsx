@@ -2,18 +2,17 @@ import React from "react";
 import { Heading } from "../components/UI/Heading";
 import { Button } from "../components/UI/Button";
 import { AppInput } from "../components/UI/appInput";
-import StepTwo from "./StepTwo";
 
 const Welcome = () => {
   return (
     <div className="container">
       <div className="wrapper">
         <div className="welcome">
-          <Heading />
+          <Heading HeadingText="Добро пожаловать в квиз от лучшего учебного центра"/>
           <form className="welcome__form">
-            <AppInput inputLabel="Ваше имя" />
-            <AppInput inputLabel="Ваш номер" />
-            <Button />
+            <AppInput inputType="text" inputLabel="Ваше имя"  id="username" inputPlaceholder="Ваш ответ" isRequired={true}/>
+            <AppInput inputType="tel" inputLabel="Ваш номер" id="phone" inputPlaceholder="+998 9- --- -- --" isRequired={true}/>
+            <Button buttonText="Далее" buttonType="submit" isDisabled={false}/>
           </form>
         </div>
       </div>

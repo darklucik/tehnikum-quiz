@@ -16,7 +16,7 @@ const StepFour = () => {
             </div>
             <ProgressBar75 />
           </div>
-          <EmojiQuestion2 />
+          <EmojiQuestion2 h2 ="2"/>
         </div>
       </div>
     </div>

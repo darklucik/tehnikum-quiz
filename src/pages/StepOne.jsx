@@ -1,7 +1,8 @@
 import React from "react";
 import { SaleSpan } from "../components/UI/sale";
 import { ProgressBar } from "../components/UI/indicatorsBar";
-import { OneQuestion } from "../components/UI/questions";
+import { AppInput } from "../components/UI/appInput";
+import { Button } from "../components/UI/Button";
 
 const StepOne = () => {
   return (
@@ -15,7 +16,8 @@ const StepOne = () => {
             </div>
             <ProgressBar />
           </div>
-          <OneQuestion />
+          <AppInput inputType="text" inputLabel="1.  Занимательный вопрос"  name="answer" inputPlaceholder="Ваш ответ" isRequired={true}/>
+          <Button buttonText="Далее" buttonType="submit" isDisabled={false}/>
         </div>
       </div>
     </div>

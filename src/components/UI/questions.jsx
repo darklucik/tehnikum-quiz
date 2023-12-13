@@ -87,10 +87,10 @@ export const EmojiQuestion = () => {
     )
 }
 
-export const EmojiQuestion2 = () => {
+export const EmojiQuestion2 = (props) => {
     return (
         <div className="question">
-            <h2>4. Занимательный вопрос</h2>
+            {props.h2}
             <ul className="level-variants">
               <li className="variant-wrapper">
                 <input required type="radio" name="variant" id="variant-1" />
