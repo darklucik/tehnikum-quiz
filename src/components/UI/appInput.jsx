@@ -9,7 +9,7 @@ export const AppInput = ({inputLabel,inputType,inputPlaceholder,id,inputError,va
           id={id}
           placeholder={inputPlaceholder}
           value={value}
-          // onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => onChange(e.target.value)}
         
         />
         {hasError&&<span id="error-message">

@@ -1,6 +1,6 @@
-export const Button = ({buttonText="Далее", buttonType, isDisabled}) => {
+export const Button = ({buttonText="Далее", buttonType, isDisabled, onClick}) => {
     return (
-        <button disabled={isDisabled} type={buttonType === "submit"? "submit":"button"} id="next-btn">
+        <button disabled={isDisabled} onClick={onClick} type={buttonType === "submit"? "submit":"button"} id="next-btn">
               {buttonText}
         </button>
     )
