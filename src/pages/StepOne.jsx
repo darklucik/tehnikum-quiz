@@ -30,13 +30,14 @@ const StepOne = () => {
             <ProgressBar />
           </div>
           <AppInput
+            value={answerValue}
             hasError={answerError}
             inputType="text"
             inputLabel="1.  Занимательный вопрос"
             name="answer"
             inputPlaceholder="Ваш ответ"
             isRequired={true}
-            
+            onChange={setAnswerValue}
 
           />
           <Button
