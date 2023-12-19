@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Heading } from "../components/UI/Heading";
 import { Button } from "../components/UI/Button";
 import { AppInput } from "../components/UI/appInput";
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
   const [nameValue, setNameValue]=useState("")
@@ -10,6 +11,11 @@ const Welcome = () => {
 
   const [nameError, setNameError] = useState(false)
   const [phoneError, setPhoneError] = useState(false)
+
+  const navigate =useNavigate()
+  const goToNextPage = () => {nameValue&&phoneValue ? navigate("/step-one") : navigate("/")
+    
+  }
 
   const clickHandler=()=> {
     if (!nameValue) {
@@ -22,6 +28,7 @@ const Welcome = () => {
     }else{
       setPhoneError(false)
     }
+    goToNextPage()
   }
 
 
@@ -44,7 +51,7 @@ const Welcome = () => {
              onChange={setNameValue}/>
 
             <AppInput
-            hasError={phoneError}
+             hasError={phoneError}
              inputType="tel"
              inputLabel="Ваш номер"
              id="phone"

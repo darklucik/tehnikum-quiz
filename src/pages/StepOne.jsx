@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { SaleSpan } from "../components/UI/sale";
-import { ProgressBar } from "../components/UI/indicatorsBar";
+import { ProgressBar, ProgressIndicator } from "../components/UI/indicatorsBar";
 import { AppInput } from "../components/UI/appInput";
 import { Button } from "../components/UI/Button";
+import { LinkButton } from "../components/UI/linkbtn";
 
 const StepOne = () => {
   const [answerValue, setAnswerValue]=useState("")
@@ -18,16 +19,18 @@ const StepOne = () => {
   }
 
 
+
+
   return (
     <div className="container">
       <div className="wrapper">
         <div className="single-input-quiz">
           <div className="indicator">
             <div className="indicator__text">
-              <SaleSpan />
-              <span className="indicator__value">15%</span>
+              
+              
             </div>
-            <ProgressBar />
+            <ProgressIndicator currentStep={1}/>
           </div>
           <AppInput
             value={answerValue}
@@ -40,11 +43,7 @@ const StepOne = () => {
             onChange={setAnswerValue}
 
           />
-          <Button
-          buttonText="Далее" 
-          buttonType="submit" 
-          isDisabled={false}
-          onClick={clickHandler} />
+          <LinkButton onClick={clickHandler} path="/step-two" />
         </div>
       </div>
     </div>
