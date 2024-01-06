@@ -1,4 +1,4 @@
-export const QuestionInput = ({itemText,itemId, isSelected,onClick,src}) => {
+export const QuestionInput = ({itemText,itemId, isSelected,onClick}) => {
     return (
         
             

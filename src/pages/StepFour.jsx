@@ -1,8 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProgressIndicator } from "../components/UI/indicatorsBar";
 import { LinkButton } from "../components/UI/linkbtn";
+import { Heading } from "../components/UI/Heading";
+import { Levelquestion } from "../components/UI/levelvariants";
+
+
+const mockData = [
+    {
+      variantId: 'variant-1',
+      variantText: '1',
+      
+    },
+    {
+      variantId: 'variant-2',
+      variantText: '2',
+      
+    },
+    {
+      variantId: 'variant-3',
+      variantText: '3',
+      
+    },
+    {
+      variantId: 'variant-4',
+      variantText: '4',
+      
+    },
+    {
+      variantId: 'variant-5',
+      variantText: '5',
+    }
+  ]
+
 
 const StepFour = () => {
+
+  const [selectedItem, setSelectedItem] = useState(null)
+
   return (
     <div className="container">
       <div className="wrapper">
@@ -11,30 +45,19 @@ const StepFour = () => {
           <ProgressIndicator />
           </div>
           <div className="question">
-            <h2>4. Занимательный вопрос</h2>
+            <Heading HeadingTag="h2" HeadingText="Вопрос номер 4" />
             <ul className="level-variants">
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-1" />
-                <label htmlFor="variant-1">1</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-2" />
-                <label htmlFor="variant-2">2</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-3" />
-                <label htmlFor="variant-3">3</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-4" />
-                <label htmlFor="variant-4">4</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-5" />
-                <label htmlFor="variant-5">5</label>
-              </li>
+              {mockData.map((variant)=>(
+                <Levelquestion 
+                key={variant.variantId} 
+                itemId={variant.variantId}
+                text={variant.variantText}
+                isSelected={selectedItem === variant.variantId}
+                onClick={() => setSelectedItem(variant.variantId)} />
+              )
+              )}
             </ul>
-            <LinkButton path="/thanks" isDisabled={false} />
+            <LinkButton path="/thanks" isDisabled={!selectedItem} />
           </div>
         </div>
       </div>

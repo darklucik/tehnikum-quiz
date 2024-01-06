@@ -63,7 +63,7 @@ const Welcome = () => {
             <Button
             buttonText="Далее"
             buttonType="submit"
-            isDisabled={false}
+            isDisabled={!nameValue&&phoneValue}
             onClick={clickHandler}/>
           </form>
         </div>

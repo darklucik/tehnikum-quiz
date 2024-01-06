@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Heading } from "../components/UI/Heading";
 import { ListImgItem } from "../components/UI/imgquestion";
-import { Button } from "../components/UI/Button";
 import { ProgressIndicator } from "../components/UI/indicatorsBar";
+import { LinkButton } from "../components/UI/linkbtn";
 
 const mockData = [
   {
@@ -50,10 +50,9 @@ const StepThree = () => {
                 
               ))}
             </ul>
-            <Button
-            isDisabled={false}
-            buttonType="submit"
-            buttonText="Далее"/>
+            <LinkButton 
+            path="/step-four" 
+            isDisabled={!selectedItem}/>
           </div>
         </div>
       </div>

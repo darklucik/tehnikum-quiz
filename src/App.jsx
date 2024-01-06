@@ -7,6 +7,7 @@ import StepThree from "./pages/StepThree";
 import StepOne from "./pages/StepOne";
 import StepFour from "./pages/StepFour";
 import Thanks from "./pages/Thanks";
+import { ThemeProvider } from "./contexts/themeprovider";
 
 
 const App = () => {
@@ -39,9 +40,11 @@ const App = () => {
   ])
 
   return (
-    <div className="App">
-      <RouterProvider router={routerConfig} />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <RouterProvider router={routerConfig} />
+      </div>
+    </ThemeProvider>
   );
 };
 

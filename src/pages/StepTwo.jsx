@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Heading } from "../components/UI/Heading";
 import { ProgressIndicator } from "../components/UI/indicatorsBar";
 import { QuestionInput } from "../components/UI/questions";
-import { Button } from "../components/UI/Button";
 import { LinkButton } from "../components/UI/linkbtn";
 
 const mockData = [

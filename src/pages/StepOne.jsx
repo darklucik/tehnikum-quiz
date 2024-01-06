@@ -43,7 +43,7 @@ const StepOne = () => {
             onChange={setAnswerValue}
 
           />
-          <LinkButton onClick={clickHandler} path="/step-two" />
+          <LinkButton onClick={clickHandler} isDisabled={!answerValue} path="/step-two" />
         </div>
       </div>
     </div>
